@@ -3,7 +3,6 @@ main:
     #LFSR
     jal start
 
-
 start:
     li t0, 0x100 #Se situa en la posicion de memoria 0X100
     li a0, 0x000 #Numero de iteraciones
@@ -14,14 +13,13 @@ start:
     jal loop
     
 shift_right:
-    
     srli a1,a1,0x001 #Shift Right, se desplaza una posicion 
     addi t0,t0,0x004 #Offset de la posicion de memoria
     or a1,a1,a5 #Se le suma el resultado de las operaciones XOR
     sb a1,0,t0 #Almacenar en memoria
     jal loop
     
-step_two:
+xor_operations:
     andi a4,a1,0x0001 #Mascara 00000 0001 (polinomio ) Calcula X^8
     srli a5,a1,0x002 #Shift Right Calculando x^6
     andi a5,a5,0x0001 #Mascara 00000 0001 (polinomio) Calcula X^6
@@ -37,7 +35,7 @@ step_two:
     
 loop:
     addi a0,a0,0x001 #Incrementa el numero de iteraciones
-    blt a0,a2,step_two #Si interacion < 100
+    blt a0,a2,xor_operations #Si interacion < 100
     jal end
 
 end:
