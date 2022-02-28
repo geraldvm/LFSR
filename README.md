@@ -1,7 +1,7 @@
 # LFSR
 Linear Feedback Shift Register on RISC V.
 
-For more information go to ![Wiki](https://github.com/geraldvm/LFSR/wiki).
+For more information go to [Wiki](https://github.com/geraldvm/LFSR/wiki).
 
 ## Requeriments
 
