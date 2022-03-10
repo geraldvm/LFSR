@@ -1,5 +1,6 @@
 main:
     #Generador de números pseudo-aleatorios
+    #Polinomio: X^8 + X^6 + X^5 + X^4
     #LFSR
     jal start
 
